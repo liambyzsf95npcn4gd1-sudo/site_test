@@ -1,19 +1,39 @@
-<?php include 'includes/header.php'; ?>
+<?php
+// =================================================================================================
+// about.php
+//
+// Страница "О компании".
+// Отображает информацию о компании DoorHan. Содержимое страницы загружается
+// динамически из текстового файла, что позволяет редактировать его через админ-панель.
+// =================================================================================================
 
+// Подключение общего заголовка сайта
+include 'includes/header.php';
+?>
+
+<!-- Основное содержимое страницы -->
 <main>
+    <!-- Секция "Hero" с заголовком страницы -->
     <section class="hero">
         <div class="container">
             <h1>Innovating Entrance Solutions Since 1994</h1>
         </div>
     </section>
 
+    <!-- Секция с основным контентом страницы "О компании" -->
     <section class="about-content">
         <div class="container">
             <?php
-                $contentFile = 'data/about.txt';
+                // Путь к файлу с контентом
+                $contentFile = 'private/data/about.txt';
+                // Проверка, существует ли файл
                 if (file_exists($contentFile)) {
+                    // Если файл существует, его содержимое считывается,
+                    // обрабатывается для безопасного вывода в HTML и отображается на странице.
+                    // nl2br преобразует переносы строк в теги <br>.
                     echo nl2br(htmlspecialchars(file_get_contents($contentFile)));
                 } else {
+                    // Если файл не найден, выводится сообщение об ошибке.
                     echo '<p>Content not available.</p>';
                 }
             ?>
@@ -21,4 +41,7 @@
     </section>
 </main>
 
-<?php include 'includes/footer.php'; ?>
+<?php
+// Подключение общего подвала сайта
+include 'includes/footer.php';
+?>

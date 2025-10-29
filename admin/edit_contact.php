@@ -1,15 +1,30 @@
 <?php
+// =================================================================================================
+// admin/edit_contact.php
+//
+// Страница для редактирования контактной информации.
+// Логика работы аналогична 'edit_about.php'. Скрипт управляет текстовым контентом,
+// который отображается в подвале сайта.
+// =================================================================================================
+
 session_start();
+
+// Проверка авторизации пользователя
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header('Location: index.php');
     exit;
 }
 
-$contentFile = '../data/contact.txt';
+// Путь к файлу с контактными данными
+$contentFile = '../private/data/contact.txt';
+
+// Загрузка текущего содержимого файла
 $content = file_exists($contentFile) ? file_get_contents($contentFile) : '';
 
+// Обработка отправки формы
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['content'])) {
+        // Сохранение нового содержимого в файл
         file_put_contents($contentFile, $_POST['content']);
         $content = $_POST['content'];
     }

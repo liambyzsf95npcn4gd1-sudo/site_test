@@ -1,7 +1,27 @@
-/* General Styles */
+/*
+=================================================================================================
+style.css
+
+Этот файл содержит все стили для сайта DoorHan.
+Структура файла:
+1.  Общие стили (General Styles): Определяет переменные, базовые стили для body,
+    типографику и общие классы, такие как .container.
+2.  Стили для шапки (Header): Стилизация верхнего меню, логотипа и навигации.
+3.  Стили для основного контента (Main Content): Стили для секций hero, сеток, карточек
+    и кнопок.
+4.  Стили для контактной формы (Contact Form): Оформление полей ввода и кнопки отправки.
+5.  Стили для подвала (Footer): Стилизация нижней части сайта.
+6.  Адаптивный дизайн (Responsive Design): Медиа-запросы для корректного отображения
+    на мобильных устройствах.
+=================================================================================================
+*/
+
+/* 1. Общие стили (General Styles) */
+/* :root используется для объявления CSS-переменных, доступных глобально */
 :root {
-    --primary-color: #003A70; /* Deep Dark Blue */
-    --accent-color: #F7941D;  /* Bright Orange */
+    /* Основные цвета бренда DoorHan */
+    --primary-color: #003A70; /* Глубокий темно-синий */
+    --accent-color: #F7941D;  /* Яркий оранжевый */
     --text-dark: #333;
     --text-light: #fff;
     --neutral-gray-dark: #58595B;
@@ -40,7 +60,7 @@ img {
     height: auto;
 }
 
-/* Header */
+/* 2. Стили для шапки (Header) */
 header {
     background-color: var(--primary-color);
     color: var(--text-light);
@@ -87,7 +107,7 @@ header nav ul li a {
     cursor: pointer;
 }
 
-/* Main Content */
+/* 3. Стили для основного контента (Main Content) */
 main {
     padding: 40px 0;
 }
@@ -137,7 +157,7 @@ main {
     text-transform: uppercase;
 }
 
-/* Contact Form */
+/* 4. Стили для контактной формы (Contact Form) */
 .contact-form {
     padding: 40px 0;
     background-color: #f9f9f9;
@@ -162,7 +182,7 @@ main {
     border-radius: 5px;
 }
 
-/* Footer */
+/* 5. Стили для подвала (Footer) */
 footer {
     background-color: var(--neutral-gray-dark);
     color: var(--text-light);
@@ -191,7 +211,8 @@ footer ul li a {
     color: var(--text-light);
 }
 
-/* Responsive Design */
+/* 6. Адаптивный дизайн (Responsive Design) */
+/* Медиа-запрос для устройств с шириной экрана 768px и меньше (планшеты и мобильные телефоны) */
 @media (max-width: 768px) {
     header .container {
         flex-wrap: wrap;
